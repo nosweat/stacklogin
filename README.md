@@ -1,6 +1,8 @@
 # stacklogin
 A Mac OS X python script to login to Stackoverflow (Stack Exchange) automatically.
 
+The script will run as daemon and will be loaded via Launch Agents.
+
 This was created to achieve "Enthusiast" & "Fanatic" badge.
 
 #INSTALLATION
