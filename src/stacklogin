@@ -1,0 +1,159 @@
+#!/usr/bin/python
+# 
+# Version      : 1.0
+# Description  : This script is a basic bot to login to stackexchange account (only) on your machine running python. Only tested on OSX
+# Author       : nosweat 
+# Date         : 19/12/2015
+# Dependencies : requests (https://github.com/kennethreitz/requests)
+# Notes: please refer here on how to run this script on MAC OSX :
+# http://stackoverflow.com/questions/9522324/running-python-in-background-on-os-x
+
+import requests, time, sys, getopt
+from HTMLParser import HTMLParser
+from htmlentitydefs import name2codepoint
+from datetime import datetime, timedelta
+
+false = False # alias
+true = True   # alias
+one_hour = 3600 # constant
+
+# ======================================================
+# BASIC CONFIGURATIONS
+# ======================================================
+so_email = ''           # your stackexchange email
+so_password = ''        # your stackexchange password
+so_login_frequency = 1  # login frequency in hours; defaults to every hour
+
+class stackOverflow():
+
+    base_url = 'https://stackoverflow.com/users/login?ssrc=head'
+    fkey = ''
+
+    def __init__(self):
+        self.fkey = self.getFkey()
+
+    # Login method that sends POST Request to the stackoverflow auth server
+    def doLogin(self):
+        print "Authenticating request..."
+        payload = self.getPayload()
+        payload['fkey'] = self.fkey
+        r = requests.post(self.base_url, data=payload,headers=self.getHeaders())
+        print "[ Logged in ]:", self.fkey
+
+    # Construct Payload being sent to the Stackoverflow server
+    def getPayload(self):
+        payload = {\
+            'email' : so_email,\
+            'password' : so_password,\
+            'isSignup' : false,\
+            'isLogin' : true,\
+            'isPassword' : false,\
+            'isAddLogin' : false,\
+            'hasCaptcha' : false,\
+            'fkey' : '',\
+            'ssrc' : 'head',\
+            'submitbutton' : 'Log in',\
+            'oauthversion' : '',\
+            'oauthserver' : '',\
+            'openidusername' : '',\
+            'openididentifier' : ''}
+        return payload
+
+    # Create Header information for stackoverflow-specific request
+    def getHeaders(self):
+        return {'Content-type':'application/x-www-form-urlencoded'}
+
+    # Send a GET request to Stackoverflow to create Fkey for CSRF purposes
+    def getFkey(self):
+        print "Retrieving fkey information..."
+        r = requests.get(self.base_url, params=self.getPayload(), headers=self.getHeaders())
+        parser = customHTMLParser()
+        parser.feed(r.text)
+        return parser.fkey
+
+class customHTMLParser(HTMLParser):
+
+    isFkeyFlag = false
+    fkey = ''
+
+    def handle_starttag(self, tag, attrs):
+        for name, value in attrs:
+            ##print "    attrs:", name, value
+            if name == 'name' and value == 'fkey':
+                self.isFkeyFlag = True
+
+            if name == 'value' and self.isFkeyFlag:
+                self.fkey = value
+                ##print "    Fkey:", self.fkey
+                self.isFkeyFlag = False
+                break
+
+    def handle_endtag(self, tag):
+        ##print "End tag  :", tag
+        h = ''
+
+    def handle_data(self, data):
+        ##print "Data     :", data
+        h = ''
+
+    def handle_comment(self, data):
+        ##print "Comment  :", data
+        h = ''
+
+    def handle_entityref(self, name):
+        c = unichr(name2codepoint[name])
+        ##print "Named ent:", c
+
+    def handle_charref(self, name):
+        if name.startswith('x'):
+            c = unichr(int(name[1:], 16))
+        else:
+            c = unichr(int(name))
+        ##print "Num ent  :", c
+
+    def handle_decl(self, data):
+        ##print "Decl     :", data
+        h = ''
+
+def main(argv):
+    _key_found = 0
+    so_login_frequency = 1
+    
+    try:
+        opts, args = getopt.getopt(argv,"hu:p:f:",["username=","password=","frequency="])
+    except getopt.GetoptError:
+        print 'stacklogin -u <stackexchange email> -p <stackexchange password> -f <login frequency in hours>'
+        sys.exit(2)
+    
+    for opt, arg in opts:
+        if opt == '-h':
+            print 'stacklogin -u <stackexchange email> -p <stackexchange password> -f <login frequency in hours>'
+            sys.exit()
+        elif opt in ("-u", "--username"):
+            so_email = arg
+        elif opt in ("-p", "--password"):
+            so_password = arg
+        elif opt in ("-f", "--frequency"):
+            try:
+                so_login_frequency = int(arg)
+            except:
+                print 'Error: not valid frequency (-f) format, expects integer'
+                sys.exit(2)
+        _key_found = 1
+
+    if _key_found == 0 :
+        print 'Error: Missing `-u`|`--username` `-p`|`--password` argument ';	  
+        sys.exit()
+    
+    while True:
+        so = stackOverflow()
+        so.doLogin()
+        nextLogin = (so_login_frequency * one_hour) / one_hour 
+        setupHours = datetime.now() + timedelta(hours=nextLogin)
+        print "Next Login in " + format(setupHours, '%H:%M:%S')
+        time.sleep(so_login_frequency * one_hour) 
+
+if __name__ == "__main__":
+   main(sys.argv[1:])
+   
+#EOF

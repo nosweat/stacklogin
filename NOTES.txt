@@ -1,0 +1,19 @@
+Notes for Launchctl
+
+1. Make the python executable:
+
+chmod +x stacklogin
+
+2. Copy the python to usr/local/bin folder to make it globally available:
+
+cp stacklogin /usr/local/bin/stacklogin
+
+3. create file com.stacklogin.osx.login.plist
+
+4. Load as daemon and run script :
+
+launchctl load ~/Library/LaunchAgents/com.stacklogin.osx.login.plist
+
+5. If uncertain then unload: 
+
+launchctl unload ~/Library/LaunchAgents/com.stacklogin.osx.login.plist
