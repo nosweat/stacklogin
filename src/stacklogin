@@ -8,7 +8,7 @@
 # Notes: please refer here on how to run this script on MAC OSX :
 # http://stackoverflow.com/questions/9522324/running-python-in-background-on-os-x
 
-import requests, time, sys, getopt
+import requests, time, sys, getopt, os, os.path
 from HTMLParser import HTMLParser
 from htmlentitydefs import name2codepoint
 from datetime import datetime, timedelta
@@ -16,6 +16,7 @@ from datetime import datetime, timedelta
 false = False # alias
 true = True   # alias
 one_hour = 3600 # constant
+pid_path = '/tmp/stacklogin.pid' #path of the pid
 
 # ======================================================
 # BASIC CONFIGURATIONS
@@ -23,6 +24,18 @@ one_hour = 3600 # constant
 so_email = ''           # your stackexchange email
 so_password = ''        # your stackexchange password
 so_login_frequency = 1  # login frequency in hours; defaults to every hour
+
+class style:
+   PURPLE = '\033[95m'
+   CYAN = '\033[96m'
+   DARKCYAN = '\033[36m'
+   BLUE = '\033[94m'
+   GREEN = '\033[92m'
+   YELLOW = '\033[93m'
+   RED = '\033[91m'
+   BOLD = '\033[1m'
+   UNDERLINE = '\033[4m'
+   END = '\033[0m'
 
 class stackOverflow():
 
@@ -114,20 +127,40 @@ class customHTMLParser(HTMLParser):
     def handle_decl(self, data):
         ##print "Decl     :", data
         h = ''
+class process():
+    @staticmethod
+    def pid():
+        try:
+            f = open(pid_path,'w')
+            f.write(format(datetime.now(), '%D%H%M%S'))
+            f.close()
+        except Exception as e:
+            print "Error: Unable to write pid \n", e
+    
+    @staticmethod
+    def isRunning():
+        return os.path.exists(pid_path) and os.path.isfile(pid_path)
 
 def main(argv):
     _key_found = 0
     so_login_frequency = 1
+    status = False
+    helper = '\n' + style.BOLD  + '[Usage]' + style.END +': stacklogin [--options]\n' + style.BOLD +'\n Options: '+ style.END +'\n\
+      -h               = help flag to show this options\n\
+      -u, --username   = stackexchange email\n\
+      -p, --password   = stackexchange password\n\
+      -f, --frequency  = login frequency in hours\n\
+      -s, --status     = a flag argument to determine the status of the script whether running or not running'
     
     try:
-        opts, args = getopt.getopt(argv,"hu:p:f:",["username=","password=","frequency="])
+        opts, args = getopt.getopt(argv,"hu:p:f:s",["username=","password=","frequency=","status"])
     except getopt.GetoptError:
-        print 'stacklogin -u <stackexchange email> -p <stackexchange password> -f <login frequency in hours>'
+        print style.BOLD + "Error:" + style.END +" wrong command arguments\n", helper
         sys.exit(2)
     
-    for opt, arg in opts:
+    for opt, arg in opts: 
         if opt == '-h':
-            print 'stacklogin -u <stackexchange email> -p <stackexchange password> -f <login frequency in hours>'
+            print helper
             sys.exit()
         elif opt in ("-u", "--username"):
             so_email = arg
@@ -139,19 +172,42 @@ def main(argv):
             except:
                 print 'Error: not valid frequency (-f) format, expects integer'
                 sys.exit(2)
+        elif opt in ("-s", "--status"):
+            status = True
+            _key_found = 1
+            break
         _key_found = 1
 
     if _key_found == 0 :
         print 'Error: Missing `-u`|`--username` `-p`|`--password` argument ';	  
         sys.exit()
+    if status:
+        if process.isRunning():
+            print 'Stacklogin is running.'
+        else:
+            print 'Stacklogin is not running.'
     
-    while True:
-        so = stackOverflow()
-        so.doLogin()
-        nextLogin = (so_login_frequency * one_hour) / one_hour 
-        setupHours = datetime.now() + timedelta(hours=nextLogin)
-        print "Next Login in " + format(setupHours, '%H:%M:%S')
-        time.sleep(so_login_frequency * one_hour) 
+    try:
+        if 'so_email' in locals() and 'so_password' in locals():
+            #create process id
+            process.pid()
+            while True:
+                so = stackOverflow()
+                so.doLogin()
+                nextLogin = (so_login_frequency * one_hour) / one_hour 
+                setupHours = datetime.now() + timedelta(hours=nextLogin)
+                print "Next Login in " + format(setupHours, '%H:%M:%S')
+                time.sleep(so_login_frequency * one_hour)
+        elif status:
+            print ""
+        else:
+            print "Unable to authenticate"
+    except:
+        try:
+            os.remove(pid_path)
+        except:
+            pass
+        print "Process ended"
 
 if __name__ == "__main__":
    main(sys.argv[1:])
