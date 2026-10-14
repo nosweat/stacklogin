@@ -1,0 +1,582 @@
+{
+  "orders": [
+    {
+      "id": 6842389659827,
+      "admin_graphql_api_id": "gid://shopify/Order/6842389659827",
+      "app_id": 580111,
+      "browser_ip": "158.140.138.119",
+      "buyer_accepts_marketing": false,
+      "cancel_reason": null,
+      "cancelled_at": null,
+      "cart_token": "hWNHsBEpSgwwb8uMQaaT9LZk",
+      "checkout_id": 30642415665331,
+      "checkout_token": "88f1690b1f9ae13da15284c6fa09878c",
+      "client_details": {
+        "accept_language": "en-SG",
+        "browser_height": null,
+        "browser_ip": "158.140.138.119",
+        "browser_width": null,
+        "session_hash": null,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+      },
+      "closed_at": null,
+      "company": null,
+      "confirmation_number": "J0IDC7M8Q",
+      "confirmed": true,
+      "contact_email": "gong0010@gmail.com",
+      "created_at": "2026-10-13T09:43:02+08:00",
+      "currency": "SGD",
+      "current_subtotal_price": "80.67",
+      "current_subtotal_price_set": {
+        "shop_money": {
+          "amount": "80.67",
+          "currency_code": "SGD"
+        },
+        "presentment_money": {
+          "amount": "80.67",
+          "currency_code": "SGD"
+        }
+      },
+      "current_total_additional_fees_set": null,
+      "current_total_discounts": "0.00",
+      "current_total_discounts_set": {
+        "shop_money": {
+          "amount": "0.00",
+          "currency_code": "SGD"
+        },
+        "presentment_money": {
+          "amount": "0.00",
+          "currency_code": "SGD"
+        }
+      },
+      "current_total_duties_set": null,
+      "current_total_price": "90.48",
+      "current_total_price_set": {
+        "shop_money": {
+          "amount": "90.48",
+          "currency_code": "SGD"
+        },
+        "presentment_money": {
+          "amount": "90.48",
+          "currency_code": "SGD"
+        }
+      },
+      "current_total_tax": "7.47",
+      "current_total_tax_set": {
+        "shop_money": {
+          "amount": "7.47",
+          "currency_code": "SGD"
+        },
+        "presentment_money": {
+          "amount": "7.47",
+          "currency_code": "SGD"
+        }
+      },
+      "customer_locale": "en-SG",
+      "device_id": null,
+      "discount_codes": [],
+      "duties_included": false,
+      "email": "gong0010@gmail.com",
+      "estimated_taxes": false,
+      "financial_status": "paid",
+      "fulfillment_status": null,
+      "landing_site": "/collections/get-well-soon-hampers?utm_source=google&utm_medium=cpc&utm_campaign={campaignname}&utm_content=709527902796&utm_term=&gad_source=1&gad_campaignid=21584611898&gbraid=0AAAAAD_dqMpbMy2Z1uaJqGEF3xEI_Pn0C&gclid=CjwKCAjw56zWBhB0EiwAdPOQOQ-AMRRPslJ9",
+      "landing_site_ref": null,
+      "location_id": null,
+      "merchant_business_entity_id": "MTY0MjkwNTU0MDM1",
+      "merchant_of_record_app_id": null,
+      "name": "#W0100172950",
+      "note": null,
+      "note_attributes": [
+        {
+          "name": "utm_source",
+          "value": "google"
+        },
+        {
+          "name": "utm_medium",
+          "value": "cpc"
+        },
+        {
+          "name": "utm_campaign",
+          "value": "{campaignname}"
+        },
+        {
+          "name": "date",
+          "value": "2026-10-13"
+        },
+        {
+          "name": "timeslot",
+          "value": "02:00 pm - 06:00 pm"
+        },
+        {
+          "name": "disable_method",
+          "value": ""
+        },
+        {
+          "name": "__address1_is_po_box",
+          "value": "false"
+        },
+        {
+          "name": "__address2_is_po_box",
+          "value": "false"
+        },
+        {
+          "name": "Sender Number",
+          "value": "82987916"
+        }
+      ],
+      "number": 171950,
+      "order_number": 172950,
+      "order_status_url": "https://www.fareastflora.com/64290554035/orders/490b396060ad7297f05aeb4703044dfb/authenticate?key=dc3a30aa1c1eae995efeffbc70ac9b5e",
+      "original_total_additional_fees_set": null,
+      "original_total_duties_set": null,
+      "payment_gateway_names": [
+        "Airwallex"
+      ],
+      "phone": null,
+      "po_number": null,
+      "presentment_currency": "SGD",
+      "processed_at": "2026-10-13T09:43:01+08:00",
+      "reference": null,
+      "referring_site": "https://www.google.com/",
+      "source_identifier": null,
+      "source_name": "web",
+      "source_url": null,
+      "subtotal_price": "80.67",
+      "subtotal_price_set": {
+        "shop_money": {
+          "amount": "80.67",
+          "currency_code": "SGD"
+        },
+        "presentment_money": {
+          "amount": "80.67",
+          "currency_code": "SGD"
+        }
+      },
+      "tags": "",
+      "tax_exempt": false,
+      "tax_lines": [
+        {
+          "price": "7.47",
+          "rate": 0.09,
+          "title": "GST",
+          "price_set": {
+            "shop_money": {
+              "amount": "7.47",
+              "currency_code": "SGD"
+            },
+            "presentment_money": {
+              "amount": "7.47",
+              "currency_code": "SGD"
+            }
+          },
+          "channel_liable": false
+        }
+      ],
+      "taxes_included": true,
+      "test": false,
+      "token": "490b396060ad7297f05aeb4703044dfb",
+      "total_cash_rounding_payment_adjustment_set": {
+        "shop_money": {
+          "amount": "0.00",
+          "currency_code": "SGD"
+        },
+        "presentment_money": {
+          "amount": "0.00",
+          "currency_code": "SGD"
+        }
+      },
+      "total_cash_rounding_refund_adjustment_set": {
+        "shop_money": {
+          "amount": "0.00",
+          "currency_code": "SGD"
+        },
+        "presentment_money": {
+          "amount": "0.00",
+          "currency_code": "SGD"
+        }
+      },
+      "total_discounts": "0.00",
+      "total_discounts_set": {
+        "shop_money": {
+          "amount": "0.00",
+          "currency_code": "SGD"
+        },
+        "presentment_money": {
+          "amount": "0.00",
+          "currency_code": "SGD"
+        }
+      },
+      "total_line_items_price": "80.67",
+      "total_line_items_price_set": {
+        "shop_money": {
+          "amount": "80.67",
+          "currency_code": "SGD"
+        },
+        "presentment_money": {
+          "amount": "80.67",
+          "currency_code": "SGD"
+        }
+      },
+      "total_outstanding": "0.00",
+      "total_price": "90.48",
+      "total_price_set": {
+        "shop_money": {
+          "amount": "90.48",
+          "currency_code": "SGD"
+        },
+        "presentment_money": {
+          "amount": "90.48",
+          "currency_code": "SGD"
+        }
+      },
+      "total_shipping_price_set": {
+        "shop_money": {
+          "amount": "9.81",
+          "currency_code": "SGD"
+        },
+        "presentment_money": {
+          "amount": "9.81",
+          "currency_code": "SGD"
+        }
+      },
+      "total_tax": "7.47",
+      "total_tax_set": {
+        "shop_money": {
+          "amount": "7.47",
+          "currency_code": "SGD"
+        },
+        "presentment_money": {
+          "amount": "7.47",
+          "currency_code": "SGD"
+        }
+      },
+      "total_tip_received": "0.00",
+      "total_weight": 0,
+      "updated_at": "2026-10-13T09:43:04+08:00",
+      "user_id": null,
+      "billing_address": {
+        "first_name": "Linlin",
+        "address1": "25 Shelford Road",
+        "phone": "82987916",
+        "city": "Singapore",
+        "zip": "288415",
+        "province": null,
+        "country": "Singapore",
+        "last_name": "Gong",
+        "address2": "#05-03",
+        "company": null,
+        "latitude": 1.3279939,
+        "longitude": 103.8122559,
+        "name": "Linlin Gong",
+        "country_code": "SG",
+        "province_code": null
+      },
+      "customer": {
+        "id": 7210019324083,
+        "created_at": "2024-05-21T20:58:38+08:00",
+        "updated_at": "2026-10-13T09:43:03+08:00",
+        "first_name": "LINLIN",
+        "last_name": "LINLIN GONG",
+        "state": "disabled",
+        "note": null,
+        "verified_email": true,
+        "multipass_identifier": null,
+        "tax_exempt": false,
+        "email_marketing_consent": {
+          "state": "not_subscribed",
+          "opt_in_level": "confirmed_opt_in",
+          "consent_updated_at": null
+        },
+        "sms_marketing_consent": null,
+        "tags": "",
+        "email": "gong0010@gmail.com",
+        "phone": null,
+        "currency": "SGD",
+        "tax_exemptions": [],
+        "admin_graphql_api_id": "gid://shopify/Customer/7210019324083",
+        "default_address": {
+          "id": 10371244327091,
+          "customer_id": 7210019324083,
+          "first_name": "Charmaine",
+          "last_name": "Tan",
+          "company": null,
+          "address1": "192B Rivervale Drive",
+          "address2": "#09-942",
+          "city": "Singapore",
+          "province": null,
+          "country": "Singapore",
+          "zip": "542192",
+          "phone": "82987916",
+          "name": "Charmaine Tan",
+          "province_code": null,
+          "country_code": "SG",
+          "country_name": "Singapore",
+          "default": true
+        }
+      },
+      "discount_applications": [],
+      "fulfillments": [],
+      "line_items": [
+        {
+          "id": 16207848472755,
+          "admin_graphql_api_id": "gid://shopify/LineItem/16207848472755",
+          "attributed_staffs": [],
+          "current_quantity": 1,
+          "fulfillable_quantity": 1,
+          "fulfillment_service": "manual",
+          "fulfillment_status": null,
+          "gift_card": false,
+          "grams": 0,
+          "name": "Message Card",
+          "price": "0.00",
+          "price_set": {
+            "shop_money": {
+              "amount": "0.00",
+              "currency_code": "SGD"
+            },
+            "presentment_money": {
+              "amount": "0.00",
+              "currency_code": "SGD"
+            }
+          },
+          "product_exists": true,
+          "product_id": 7661372145843,
+          "properties": [
+            {
+              "name": "Occasion",
+              "value": "SPEEDY RECOVERY"
+            },
+            {
+              "name": "Recipient Name",
+              "value": "Dear Charmaine"
+            },
+            {
+              "name": "Message",
+              "value": "Wishing you a speedy recovery."
+            },
+            {
+              "name": "Closing",
+              "value": "Warmest regards"
+            },
+            {
+              "name": "Sender Name",
+              "value": "Jeannie & Linlin"
+            },
+            {
+              "name": "Message_bundle_ID",
+              "value": "1791855467"
+            }
+          ],
+          "quantity": 1,
+          "requires_shipping": true,
+          "sku": "",
+          "taxable": true,
+          "title": "Message Card",
+          "total_discount": "0.00",
+          "total_discount_set": {
+            "shop_money": {
+              "amount": "0.00",
+              "currency_code": "SGD"
+            },
+            "presentment_money": {
+              "amount": "0.00",
+              "currency_code": "SGD"
+            }
+          },
+          "variant_id": 43133268459699,
+          "variant_inventory_management": null,
+          "variant_title": null,
+          "vendor": "Far East Flora",
+          "tax_lines": [
+            {
+              "channel_liable": false,
+              "price": "0.00",
+              "price_set": {
+                "shop_money": {
+                  "amount": "0.00",
+                  "currency_code": "SGD"
+                },
+                "presentment_money": {
+                  "amount": "0.00",
+                  "currency_code": "SGD"
+                }
+              },
+              "rate": 0.09,
+              "title": "GST"
+            }
+          ],
+          "duties": [],
+          "discount_allocations": []
+        },
+        {
+          "id": 16207848505523,
+          "admin_graphql_api_id": "gid://shopify/LineItem/16207848505523",
+          "attributed_staffs": [],
+          "current_quantity": 1,
+          "fulfillable_quantity": 1,
+          "fulfillment_service": "manual",
+          "fulfillment_status": null,
+          "gift_card": false,
+          "grams": 0,
+          "name": "Fruits Lover – Fruits Hamper - Deluxe",
+          "price": "80.67",
+          "price_set": {
+            "shop_money": {
+              "amount": "80.67",
+              "currency_code": "SGD"
+            },
+            "presentment_money": {
+              "amount": "80.67",
+              "currency_code": "SGD"
+            }
+          },
+          "product_exists": true,
+          "product_id": 8184207147187,
+          "properties": [
+            {
+              "name": "Main_bundle_ID",
+              "value": "1791855467"
+            },
+            {
+              "name": "Delivery",
+              "value": "2026-10-13, 02:00 pm - 06:00 pm"
+            },
+            {
+              "name": "_timeslot_id",
+              "value": "59975893171"
+            },
+            {
+              "name": "Compare-at Price",
+              "value": "$94.90"
+            },
+            {
+              "name": "Discount Percentage",
+              "value": "14.99%"
+            },
+            {
+              "name": "Message Card",
+              "value": ""
+            },
+            {
+              "name": "_item_tags",
+              "value": "vday"
+            }
+          ],
+          "quantity": 1,
+          "requires_shipping": true,
+          "sku": "SH06-D",
+          "taxable": true,
+          "title": "Fruits Lover – Fruits Hamper",
+          "total_discount": "0.00",
+          "total_discount_set": {
+            "shop_money": {
+              "amount": "0.00",
+              "currency_code": "SGD"
+            },
+            "presentment_money": {
+              "amount": "0.00",
+              "currency_code": "SGD"
+            }
+          },
+          "variant_id": 44451554361523,
+          "variant_inventory_management": null,
+          "variant_title": "Deluxe",
+          "vendor": "Far East Flora",
+          "tax_lines": [
+            {
+              "channel_liable": false,
+              "price": "6.66",
+              "price_set": {
+                "shop_money": {
+                  "amount": "6.66",
+                  "currency_code": "SGD"
+                },
+                "presentment_money": {
+                  "amount": "6.66",
+                  "currency_code": "SGD"
+                }
+              },
+              "rate": 0.09,
+              "title": "GST"
+            }
+          ],
+          "duties": [],
+          "discount_allocations": []
+        }
+      ],
+      "payment_terms": null,
+      "refunds": [],
+      "shipping_address": {
+        "first_name": "Charmaine",
+        "address1": "192B Rivervale Drive",
+        "phone": "82987916",
+        "city": "Singapore",
+        "zip": "542192",
+        "province": null,
+        "country": "Singapore",
+        "last_name": "Tan",
+        "address2": "#09-942",
+        "company": null,
+        "latitude": 1.3942918,
+        "longitude": 103.9030793,
+        "name": "Charmaine Tan",
+        "country_code": "SG",
+        "province_code": null
+      },
+      "shipping_lines": [
+        {
+          "id": 5513814245555,
+          "carrier_identifier": "305d974752b2d162d028c98f6f89233b",
+          "code": "datajet-rates",
+          "discounted_price": "9.81",
+          "discounted_price_set": {
+            "shop_money": {
+              "amount": "9.81",
+              "currency_code": "SGD"
+            },
+            "presentment_money": {
+              "amount": "9.81",
+              "currency_code": "SGD"
+            }
+          },
+          "is_removed": false,
+          "phone": null,
+          "price": "9.81",
+          "price_set": {
+            "shop_money": {
+              "amount": "9.81",
+              "currency_code": "SGD"
+            },
+            "presentment_money": {
+              "amount": "9.81",
+              "currency_code": "SGD"
+            }
+          },
+          "requested_fulfillment_service_id": null,
+          "source": "Custom DataJet Rates",
+          "title": "Individual Shipping Rate",
+          "tax_lines": [
+            {
+              "channel_liable": false,
+              "price": "0.81",
+              "price_set": {
+                "shop_money": {
+                  "amount": "0.81",
+                  "currency_code": "SGD"
+                },
+                "presentment_money": {
+                  "amount": "0.81",
+                  "currency_code": "SGD"
+                }
+              },
+              "rate": 0.09,
+              "title": "GST"
+            }
+          ],
+          "discount_allocations": []
+        }
+      ]
+    }
+  ]
+}
